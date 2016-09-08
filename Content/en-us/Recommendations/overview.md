@@ -11,7 +11,17 @@ The Recommendations API built with Microsoft Azure Machine Learning helps your c
 
 The recommendation engine may be trained by uploading data about past customer activity or by collecting data directly from your digital store. When the customer returns to your store you will be able to feature recommended items from your catalog that may increase your conversion rate.
 
-Recommendations supports 3 common scenarios:
+## Resources ##
+
+[Getting Started Guide](https://azure.microsoft.com/en-us/documentation/articles/cognitive-services-recommendations-quick-start)
+
+[Collecting Data to Train your Model](https://azure.microsoft.com/en-us/documentation/articles/cognitive-services-recommendations-collecting-data)
+
+[Build Types and Model Quality](https://azure.microsoft.com/en-us/documentation/articles/cognitive-services-recommendations-buildtypes)
+
+[API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/Recommendations.V4.0)
+
+## Common Scenarios Supported By Recommendations
 
 **Frequently Bought Together (FBT) Recommendations**
 
@@ -31,7 +41,7 @@ Given a customer's prior activity, it is possible to recommend items that the cu
 
 For instance, given all movies watched by a customer, it is possible to recommend additional content that may be of interest to the customer.
 
+## Questions?
+Feel free to contacts us at mlapi@microsoft.com
 
-**Resources**
 
-[Recommendations Getting Started Guide at Azure.com](https://azure.microsoft.com/en-us/documentation/articles/cognitive-services-recommendations-quick-start)

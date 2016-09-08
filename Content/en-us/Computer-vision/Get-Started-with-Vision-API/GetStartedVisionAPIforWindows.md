@@ -25,7 +25,7 @@ The below example has been developed for the .NET Framework using [Visual Studio
 Before creating the example, you must subscribe to Computer Vision API which is part of the Microsoft Cognitive Services (formerly Project Oxford). For subscription and key management details, see [Subscriptions](https://www.microsoft.com/cognitive-services/en-us/sign-up). Both the primary and secondary key can be used in this tutorial. 
 
   * ####Get the client library and example
-You may download the Computer Vision API client library and example application via [GitHub](https://github.com/Microsoft/ProjectOxford-ClientSDK). The downloaded zip file needs to be extracted to a folder of your choice, many users choose the Visual Studio 2015 folder.
+You may download the Computer Vision API client library and example application via [SDK](https://www.github.com/microsoft/cognitive-vision-windows). The downloaded zip file needs to be extracted to a folder of your choice, many users choose the Visual Studio 2015 folder.
 
 ###<a name="Step1">Step 1: Install the example</a>
 
@@ -48,7 +48,7 @@ You can choose to persist your subscription key on your PC or laptop by clicking
 
 ![Analyze Image Interface](../Images/Analyze_Image_Example.PNG)
 
-4.	There are example images to be used with this example application. You can find these images on Github under Face, Windows, then search the [Data](https://github.com/Microsoft/ProjectOxford-ClientSDK/tree/vision-build-2016/Face/Windows/Data) folder. Please note the use of these images is licensed under agreement [LICENSE-IMAGE](https://github.com/Microsoft/ProjectOxford-ClientSDK/blob/master/LICENSE-IMAGE.md).
+4.	There are example images to be used with this example application. You can find these images on the Face API Windows Github repo, in the [Data folder](https://github.com/Microsoft/Cognitive-Face-Windows/tree/master/Data). Please note the use of these images is licensed under agreement [LICENSE-IMAGE](https://github.com/Microsoft/Cognitive-Face-Windows/blob/master/LICENSE-IMAGE.md).
 
 ###<a name="Review">Review and Learn</a>
 Now that you have a running application, let us review how this example app integrates with Cognitive Services technology. This will make it easier to either continue building onto this app or develop your own app using Microsoft Computer Vision API.

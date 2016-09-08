@@ -138,8 +138,8 @@ Request Body: JSON payload
 {
   "language": "en",
   "analyzerIds": [
-    "4D4F03C1-2B1B-43E7-8E16-E5F2FF66BF93",
-    "1F115AB3-A64D-41C6-9D2F-87519AAF2712" ],
+    "4FA79AF1-F22C-408D-98BB-B7D7AEEF7F04",
+    "22A6B758-420F-4745-8A3C-46835A67C0D2" ],
   "text": "Hi, Tom! How are you today?" 
 }
 ```
@@ -148,11 +148,11 @@ Response: JSON
 ```json
 [
   {
-    "analyzerId": "4D4F03C1-2B1B-43E7-8E16-E5F2FF66BF93", 
+    "analyzerId": "4FA79AF1-F22C-408D-98BB-B7D7AEEF7F04", 
     "result": [ ["NNP",",","NNP","."], ["WRB","VBP","PRP","NN","."] ]
   },
   {
-    "analyzerId": "1F115AB3-A64D-41C6-9D2F-87519AAF2712", 
+    "analyzerId": "22A6B758-420F-4745-8A3C-46835A67C0D2", 
     "result":["(TOP (S (NNP Hi) (, ,) (NNP Tom) (. !)))","(TOP (SBARQ (WHADVP (WRB How)) (SQ (VP (VBP are)) (NP (PRP you)) (NN today) (. ?))))"]
   }
 ]

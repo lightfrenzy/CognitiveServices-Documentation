@@ -8,18 +8,6 @@ Weight: 180
 
 # Bing Text To Speech API
 
-
-### Non Disclosure Agreement.
-
-© 2016 Microsoft. All rights reserved.
-
-This document is provided “as-is”. Information and views expressed in this document, including URLs and other Internet website references, may change without notice.
-
-Examples are provided for illustration only.
-
-This document does not provide you with any legal rights to intellectual property in any Microsoft product. You may copy and use this document for your internal reference purposes. This document is confidential and proprietary to Microsoft. It can be used only in agreement with a non-disclosure agreement.
-
---------------------------------------------------
 ## Contents
 [1. Introduction](#Introduction)  
 [2. Voice Synthesis Request](#VoiceSynReq)

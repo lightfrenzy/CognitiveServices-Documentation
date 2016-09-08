@@ -1,4 +1,9 @@
-
+<!--
+NavPath: Bing Speech API/Speech Recognition/Windows API
+LinkLabel: Get started with Windows 10 Universal App
+Url: Speech-api/documentation/GetStarted/GetStartedCSharpWin10
+Weight: 2
+-->
 
 # Get started with Bing Speech Recognition in C&#35; for .Net Universal Apps on Windows 10 (including Phone)
 
@@ -7,14 +12,14 @@ Learn to create and develop a simple Windows 10 Universal Application that uses 
 ### Prerequisites
 
 1.	Install Windows 10 from [here](http://dev.windows.com/en-us/).
-2.	Install Visual Studio 2015 from [here](http://dev.windows.com/en-us/). During the installation of Visual Studio 2015, make sure that you select the **Custom installation** option and check all the **Universal Windows App Development Tools** options. 
+2.	Install Visual Studio 2015 from [here](http://dev.windows.com/en-us/). During the installation of Visual Studio 2015, make sure that you select the **Custom installation** option and check all the **Universal Windows App Development Tools** options.
 3.	Upgrade your Visual Studio 2015 to **Update 2**.
 
 If you have a **pre-existing installation of Visual Studio 2015** and are unsure if the **Universal Windows App Development Tools** options were set, do the following.
 
-1. Go to **Control Panel** > **Programs** > **Programs and Features** and look for your Microsoft Visual Studio 2015 entry. 
-2. Right-click on the **Visual Studio 2015** application and choose **Change**. 
-3. Wait a bit and, in the upcoming Visual Studio 2015 dialog box, choose **Modify**. Look in the upcoming list of options for **Universal Windows App Development Tools** and click on that to reveal all the options under **Universal Windows App Development Tools** to select all of them. 
+1. Go to **Control Panel** > **Programs** > **Programs and Features** and look for your Microsoft Visual Studio 2015 entry.
+2. Right-click on the **Visual Studio 2015** application and choose **Change**.
+3. Wait a bit and, in the upcoming Visual Studio 2015 dialog box, choose **Modify**. Look in the upcoming list of options for **Universal Windows App Development Tools** and click on that to reveal all the options under **Universal Windows App Development Tools** to select all of them.
 4. Hit **Next** and then **Update** to install **Update 2**.
 
 ### Step 1: Create an Windows 10 Universal Application project
@@ -41,7 +46,7 @@ SpeechRecognizer supports 2 types of recognition sessions:
 * **Continuous recognition sessions** for prolonged audio input from the user. Here, recognition results for phrases spoken during the session are continually produced and returned to the user while the user continues speaking. A continuous session needs to be either explicitly ended or automatically times out after a configurable period of silence (default is 20 seconds).
 
 * **Speech recognition session for recognizing** a short phrase. The session is terminated and the recognition results returned when a pause is detected by the recognizer.
- 
+
 The objects corresponding to each of these types of sessions have various events for which handlers can be attached to obtain notification of various interesting events during the recognition session.
 
 A continuous recognition session can be started by calling the SpeechRecognizer.ContinuousRecognitionSession.StartAsync method. The SpeechRecognizer.ContinuousRecognitionSession object provides the following events:
@@ -49,7 +54,7 @@ A continuous recognition session can be started by calling the SpeechRecognizer.
 * **ResultGenerated event:** Triggered every time results of a phrase spoken during the session are available. The results are passed as an argument to any handlers attached to the event.
 
 * **Completed event:** Triggered at the end of a continuous recognition session.
-  
+
 ![windows-doc002](../Images/windows-doc002.png)
 ![windows-doc003](../Images/windows-doc003.png)
 
@@ -73,5 +78,6 @@ In conclusion, we should note that this tutorial and the example project provide
 * [Get Started with Speech Recognition in C Sharp for .Net on Windows Desktop](GetStartedCSharpDesktop.md)
 * [Get Started with Speech Recognition in C Sharp for .Net on Windows Phone 8.1](GetStartedCSharpWinPhone.md)
 * [Get started with Speech Recognition and/or intent in Java on Android](GetStartedJavaAndroid.md)
-* [Get started with Speech Recognition and/or intent in Objective C on iOS](Get-Started-ObjectiveC-iOS.md) 
- 
+* [Get started with Speech Recognition and/or intent in Objective C on iOS](Get-Started-ObjectiveC-iOS.md)
+* [Get started with Bing Speech API in cURL](GetStarted-cURL.md)
+

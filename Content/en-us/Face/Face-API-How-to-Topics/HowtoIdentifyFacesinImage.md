@@ -38,7 +38,7 @@ In this sample, we will demonstrate the following:
 
 To carry out the demonstration of this sample, you will need to prepare a bunch of pictures:
 
-- A few photos with the person's face. [Click here to download sample photos](https://github.com/Microsoft/ProjectOxford-ClientSDK/tree/master/Face/Windows/Data) for Anna, Bill and Clare.
+- A few photos with the person's face. [Click here to download sample photos](https://github.com/Microsoft/Cognitive-Face-Windows/tree/master/Data) for Anna, Bill and Clare.
 - A series of test photos, which may or may not contain the faces of Anna, Bill or Clare used to test their identification. You can also select some sample images from the link above.
 
 ## <a name="step1"></a> Step 1: Authorize the API call

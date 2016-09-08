@@ -6,44 +6,47 @@ Weight: 100
 -->
 # Face API
 
-Welcome to the Microsoft Face API. Face API is a cloud-based API that provides the most advanced algorithms for face detection and recognition. The main functionality of Face API can be divided into two categories: face detection with attributes extraction and face recognition.
+Welcome to the Microsoft Face API, a cloud-based service that provides the most advanced face algorithms. Face API has two main functions: face detection with attributes and face recognition.
 
 ## Face Detection
 
-
-The Face API provides high precision face location detection that can detect up to 64 human faces in an image. Face detection can be done by uploading an entire JPEG file or by specifying a URL of an existing JPEG image on the web.
+Face API detects up to 64 human faces with high precision face location in an image. And the image can be specified by file in bytes or valid URL.
 
 ![Overview - Face Detection](./Images/Face.detection.jpg)
 
-The detected faces are returned with rectangles (left, top, width and height) indicating the location of faces in the image in pixels. Optionally, face detection can also extract a series of face related attributes from each face such as pose, gender and age.
-
-For more details about face detection with attributes extraction, please refer to the API [Face - Detect](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+Face rectangle (left, top, width and height) indicating the face location in the image is returned along with each detected face. Optionally, face detection extracts a series of face related attributes such as pose, gender, age, head pose, facial hair and glasses. Refer to [Face - Detect](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) for more details.
 
 ## Face Recognition
 
-In general, face recognition provides the functionalities of automatically identifying or verifying a person from a selection of detected faces. The Face API provides four recognition functionalities: face verification, similar face searching, automatic face grouping and person identification. Face recognition is widely used in security systems, celebrity recognition and photo tagging applications.
+Face recognition is widely used in many scenarios including security, natural user interface, image content analysis and management, mobile apps, and robotics. Four face recognition functions are provided: face verification, finding similar faces, face grouping, and person identification.
 
 ### Face Verification
 
-Face API verification can perform an authentication against two detected faces. For more details about face verification, please refer to the API [Face - Verify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
+Face API verification performs an authentication against two detected faces or authentication from one detected face to one person object. Refer to [Face - Verify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a) for more details.
 
-### Similar Face Searching
+### Finding Similar Face
 
-Face API can search for faces based on similarity. By providing one target detected face, and a set of unknown faces to search with, our service can return a small set of faces that look most similar to the target face. For more details about similar face searching, please refer to the API [Face - Find Similar](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).
+Given target detected face and a set of candidate faces to search with, our service finds a small set of faces that look most similar to the target face. Two working modes, `matchFace` and `matchPerson` are supported. `matchPerson` mode returns similar faces after applying a same-person threshold derived from [Face - Verify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a). `matchFace` mode ignores the same-person threshold and returns top similar candidate faces. Take the following example, candidate faces are listed.      
+![Overview - Face Find Similar](./Images/FaceFindSimilar.Candidates.jpg)
+And query face is 
+
+![Overview - Face Find Similar](./Images/FaceFindSimilar.QueryFace.jpg) 
+
+To find 4 similar faces, `matchPerson` mode returns (a) and (b), which belong to the same person with query face. `matchFace` mode returns (a), (b), (c) and (d), exactly 4 candidates even if low similarity. Refer to [Face - Find Similar](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) for more details.
 
 ### Face Grouping
 
-Face API can automatically group detected faces based on similarity. This API takes one set of unknown faces, and then divides them into several groups. Each group is a disjointed proper subset of the original unknown face set, it will contain similar faces that can be considered as one person. For more details about face grouping, please refer to the API [Face - Group](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
+Given one set of unknown faces, face grouping API automatically divides them into several groups based on similarity. Each group is a disjointed proper subset of the original unknown face set, and contains similar faces. And all the faces in the same group can be considered to belong to the same person object. Refer to [Face - Group](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238) for more details.
 
 ### Face Identification
 
-Face API identification can identify people from a detected face. The people database (defined as a person group) need to be defined in advance for accurate identification.
+Face API can be used to identify people based on a detected face and people database (defined as a person group) which needs to be created in advance and can be edited over time.
 
-The following figure is an example of a person group named "MyFriends". Each group may have up to 1000 people defined. Meanwhile, each person can register one or more faces.
+The following figure is an example of a person group named "myfriends". Each group may contain up to 1,000 person objects. Meanwhile, each person object can have one or more faces registered. 
 
 ![Overview - Person Group](./Images/person.group.clare.jpg)
 
-After a person group has been created and trained, identification can then be performed against the group and a new test face. If the face is identified as a person defined in the group, the person will be returned.
+After a person group has been created and trained, identification can be performed against the group and a new detected face. If the face is identified as a person object in the group, the person object will be returned.
 
 For more details about person identification, please refer to the API guides listed below:
 
@@ -54,10 +57,24 @@ For more details about person identification, please refer to the API guides lis
 
 ## Changes
 
-This document is targeting **Microsoft Cognitive Services (previously Project Oxford) Face V1.0** service. For user who has experiences on using Face V0, there are some major changes we would like you to know before switching from Face V0 to Face V1.0 service.
+This document is targeting **Microsoft Face API** service version 1.0.
+
+### Release changes in July 2016
+
+* **Face Verification API** Face to Person object authentication is supported – previously Face Verification requests only supported Face to Face authentication. More details can be found: [Face - Verify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a).
+
+* **Finding Similar Face API** Added optional `mode` field enabling selection of two working modes, default `matchPerson` works the same as before, and new mode `matchFace` removes the same person filtering. If `mode` field is not specified, the behavior is the same as the past release. More details can be found: [Face - Find Similar](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).
+
+* **Face Identification API** Optional user-specified `confidenceThreshold` is enabled for user to define the confidence threshold of whether one face belong to a person object. More details can be found: [Face - Identify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+
+* **List person groups** New optional `start` and `top` parameters in list person groups to support user specifying the start point and the total person groups number to list. More details can be found: [Person Group - List Person Groups](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395248).
+
+**Note**: All of these changes are compatible with the last version service, and using the default value for the newly added parameters will not cause any changes to users' code. 
+
+### V1.0 changes from V0
 
 * **API Signature**
-In Face V1.0, Service root endpoint changes from "https://api.projectoxford.ai/face/v0/" to "https://api.projectoxford.ai/face/v1.0/" 
+In Face API V1.0, Service root endpoint changes from `https://api.projectoxford.ai/face/v0/` to `https://api.projectoxford.ai/face/v1.0/` 
 There are several signature changes for API, such as [Face - Detect](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [Face - Identify](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face - Find Similar](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237), [Face - Group](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
 
 * **Face sizes**
@@ -66,7 +83,7 @@ The previous version of Face API was not clear about the smallest face sizes the
 * **Persisted data**
 Existing Person Group and Person data which has been setup with Face V0 cannot be accessed with the Face V1.0 service. This incompatible issue will occur for only this one time, following API updates will not affect persisted data any more.
 
-**Note**: The V0 of Face APIs will be retired on **06/30/2016**. We highly suggest you switch to Face V1.0.
+* **Note**: The V0 endpoint of Face API was retired on **06/30/2016**.
 
 ## Getting Started
 
