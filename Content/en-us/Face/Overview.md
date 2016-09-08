@@ -80,6 +80,8 @@ Take a look at these sample applications which make use of Face API.
 
 - [FamilyNotes UWP app](https://github.com/Microsoft/Windows-appsample-familynotes)
  - Universal Windows Platform (UWP) sample app that shows usage of speech, Cortana, ink, and camera through a family note sharing scenario. 
+- [Video Frame Analysis Sample](https://github.com/microsoft/cognitive-samples-videoframeanalysis)
+ - Universal Windows Platform (UWP) sample app that shows analyzing live video streams in near real-time using the Face, Computer Vision, and Emotion APIs.
 
 ## Related Topics
 
