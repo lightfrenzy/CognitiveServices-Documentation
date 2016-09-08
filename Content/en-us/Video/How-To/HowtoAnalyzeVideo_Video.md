@@ -1,7 +1,7 @@
-<!-- 
+﻿<!-- 
 NavPath: Video API/How To
 LinkLabel: How to Analyze Videos in Real-time
-Url: video-api/documentation/How-To/HowtoAnazlyzeVideo_Video
+Url: video-api/documentation/How-To/HowtoAnalyzeVideo_Video
 Weight: 70
 -->
 
@@ -200,8 +200,3 @@ In this guide, you learned how to run near-real-time analysis on live video stre
 
 Please feel free to provide feedback and suggestions in the [GitHub repository](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/), or for more broad API feedback, on our [UserVoice site](https://cognitive.uservoice.com/).
 
-
-
-## <a name="related"></a> Related Topics
-- [How to Identify Faces in Image](HowtoIdentifyFacesinImage.md)
-- [How to Detect Faces in Image](HowtoDetectFacesinImage.md)

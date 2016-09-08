@@ -1,7 +1,7 @@
 <!-- 
 NavPath: Face API/How-to Topics
 LinkLabel: How to Analyze Videos in Real-time
-Url: face-api/documentation/face-api-how-to-topics/HowtoAnazlyzeVideo_Face
+Url: face-api/documentation/face-api-how-to-topics/HowtoAnalyzeVideo_Face
 Weight: 30
 -->
 
